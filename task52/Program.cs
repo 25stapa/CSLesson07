@@ -27,37 +27,55 @@ Random rnd = new Random();
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
-        array[i, j] = Convert.ToInt32(rnd.Next(1, 11));
+        array[i, j] = Convert.ToInt32(rnd.Next(0, 11));
 }
 
 //  Outputting an array to the console
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
-        Console.Write($"{array[i, j]}, ");
+        Console.Write($"{array[i, j]};  ");
     Console.WriteLine();
 }
+Console.WriteLine();
+
 
 
 //  Find the arithmetic mean of the elements in each column.
 
-
-float[] sum = new float[b];
 int n = 0;
-
-for (int i = 0; i < array.GetLength(0); i++)
+for (int j = 0; j < array.GetLength(1); j++)
 {
-    for (int j = 0; j < array.GetLength(1); j++)
+
+    double sum = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        sum[i] += array[j, i];
-        
-
+        sum += array[i, j];
     }
-
+    n++;
+    Console.WriteLine($"Average column {n} = {sum / array.GetLength(0): #.##};");
+    
 }
+Console.WriteLine();
 
-for (int i = 0; i < array.GetLength(1); i++)
-{
-    Console.Write($"{((float)sum[i] / array.GetLength(1)).ToString("F" + 1)}; ");
-}
+
+
+//  Find the arithmetic mean of the elements in each column.
+
+//int n = 0;
+//for (int j = 0; j < array.GetLength(1); j++)
+//{
+
+//    double sum = 0;
+//    for (int i = 0; i < array.GetLength(0); i++)
+//    {
+//        sum += array[i, j];
+//    }
+//    n++;
+//    Console.WriteLine($"Average column {n} = {sum / array.GetLength(0)};");
+    
+//}
+//Console.WriteLine();
+
+
 
