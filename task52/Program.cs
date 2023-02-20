@@ -57,25 +57,3 @@ for (int j = 0; j < array.GetLength(1); j++)
     
 }
 Console.WriteLine();
-
-
-
-//  Find the arithmetic mean of the elements in each column.
-
-//int n = 0;
-//for (int j = 0; j < array.GetLength(1); j++)
-//{
-
-//    double sum = 0;
-//    for (int i = 0; i < array.GetLength(0); i++)
-//    {
-//        sum += array[i, j];
-//    }
-//    n++;
-//    Console.WriteLine($"Average column {n} = {sum / array.GetLength(0)};");
-    
-//}
-//Console.WriteLine();
-
-
-
