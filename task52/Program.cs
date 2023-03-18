@@ -8,12 +8,26 @@
 */
 
 //  Задаем двумерный массив параметрами от пользователя
+int GetParameterArray(string message)
+{
+    int number = 0;
+    while (true)
+    {
+        Console.Write(message);
+        if (int.TryParse(Console.ReadLine(), out number) && number > 0) 
+        {
+            break;
+        }
+        else
+        {
+            Console.WriteLine("You entered not a number, or a number less than or equal to zero, please try again...");
+        }
+    }
+    return number;
+}
 
-Console.Write("Enter the number of rows in the array: ");
-int a = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Enter the number of colums in the array: ");
-int b = Convert.ToInt32(Console.ReadLine());
+int a = GetParameterArray("Enter the number of rows in the array: ");
+int b = GetParameterArray("Enter the number of colums in the array: ");
 
 Console.WriteLine();
 
@@ -34,7 +48,7 @@ for (int i = 0; i < array.GetLength(0); i++)
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
-        Console.Write($"{array[i, j]};  ");
+        Console.Write($"{array[i, j]}\t");
     Console.WriteLine();
 }
 Console.WriteLine();
@@ -54,6 +68,6 @@ for (int j = 0; j < array.GetLength(1); j++)
     }
     n++;
     Console.WriteLine($"Average column {n} = {sum / array.GetLength(0): #.##};");
-    
+
 }
 Console.WriteLine();
