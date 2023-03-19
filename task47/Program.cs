@@ -7,7 +7,7 @@
 
 //   Метод получения двумерного массива с рандомными числами
 
-void FillTwoDimentionalArray(float[,] array)
+void FillArray2D(float[,] array)
 {
     for (int m = 0; m < array.GetLength(0); m++)
     {
@@ -20,14 +20,14 @@ void FillTwoDimentionalArray(float[,] array)
 
 //  Метод вывода в консоль двумерного массива
 
-void PrintTwoDimentionalArray(float[,] array)
+void PrintArray2D(float[,] array)
 {
     for (int m = 0; m < array.GetLength(0); m++)
     {
         for (int n = 0; n < array.GetLength(1); n++)
         {
             
-	        Console.Write($"{array[m, n].ToString("F" +1)}; ");  // .ToString("F" +1) Округление до 1 знака после запятой
+	        Console.Write($"{array[m, n]:#.#}\t");
         }
         Console.WriteLine();
     }
@@ -42,9 +42,9 @@ float[,] array = new float[m, n];
 
 //  Получение двумерного массива с рандомными числами
 
-FillTwoDimentionalArray(array);
+FillArray2D(array);
 
-//  Вывод на консоль массива 
+//  Вывод в консоль массива 
 
-PrintTwoDimentionalArray(array);
+PrintArray2D(array);
 
